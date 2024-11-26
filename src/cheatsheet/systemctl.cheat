@@ -1,10 +1,24 @@
 % alexis-opolka, systemd, systemctl
 
+############################## VARS ###############################
+$ unit:  systemctl list-units --output json | \
+  jq -r --arg pattern $1 '.[] | select(unit)' | jq ".[].unit" | awk "{print $1}"
+
+### Units
+
 # List all units
 systemctl list-units
 
 # List all active and unloaded units
 systemctl list-units --all
+
+### Unit Files
+
+# Show all unit-files
+systemctl list-unit-files
+
+# Show specific unit-files of a unit
+systemctl list-unit-files <list-of-unit>
 
 ### Dependencies of unit files
 
@@ -12,6 +26,4 @@ systemctl list-units --all
 systemctl list-dependencies
 
 # Shows dependencies of a certain unit
-systemctl list-dependencies <unit>
-$ unit:  systemctl list-units --output json | \
-  jq -r --arg pattern $1 '.[] | select(unit)' | jq ".[].unit" | awk "{print $1}"
+systemctl list-dependencies <list-of-unit>
