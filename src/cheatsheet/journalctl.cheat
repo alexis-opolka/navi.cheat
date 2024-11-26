@@ -1,0 +1,7 @@
+% alexis-opolka, systemd, journalctl
+
+$ list-of-unit:  systemctl list-units -o json | \
+  jq -r --arg pattern $1 '.[] | select(unit)' | jq ".[].unit" | awk "{print $1}"
+
+# Show data specific of a unit
+journalctl -u <list-of-unit> -n 1 -o verbose

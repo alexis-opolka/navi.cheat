@@ -19,11 +19,17 @@ systemctl list-units --all
 # Show all service units
 systemctl list-units --type=service
 
+### Show properties
+% alexis-opolka, systemd, systemctl, show
+
 # Show all status of systemd
 systemctl show
 
 # show specific status of unit
 systemctl show <list-of-unit>
+
+# Show networking properties of service
+systemctl show <list-of-unit> -p IPIngressBytes -p IPIngressPackets -p IPEgressBytes -p IPEgressPackets
 
 ### Unit Files
 % alexis-opolka, systemd, systemctl, unit-files
@@ -58,3 +64,21 @@ systemctl get-default
 
 # Set default target
 systemctl set-default <list-of-target>
+
+### Edit units
+% alexis-opolka, systemd, systemctl, units, edition
+
+# Edit unit
+systemctl edit <list-of-unit>
+
+### Status units
+% alexis-opolka, systemd, systemctl, units, status
+
+# Show status of unit
+systemctl status <list-of-unit>
+
+### Poperty of units
+% alexis-opolka, systemd, systemctl, units, properties
+
+# Set properties of unit
+systemctl set-property <list-of-unit> <properties>

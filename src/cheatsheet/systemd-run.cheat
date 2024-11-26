@@ -1,0 +1,7 @@
+% alexis-opolka, systemd, systemd-run
+
+# Systemd-run with Dynamic user process
+systemd-run -p DynamicUser=1 -t <executable>
+
+# Systemd-run with Max RAM memory
+systemd-run --scope -p MemoryMax=<RAMSize> <executable>
