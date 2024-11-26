@@ -1,7 +1,7 @@
 % alexis-opolka, systemd, systemctl
 
 ############################## VARS ###############################
-$ unit:  systemctl list-units --output json | \
+$ list-of-unit:  systemctl list-units --output json | \
   jq -r --arg pattern $1 '.[] | select(unit)' | jq ".[].unit" | awk "{print $1}"
 
 ### Units
