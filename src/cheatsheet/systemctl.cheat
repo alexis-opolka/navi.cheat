@@ -1,4 +1,4 @@
-% alexis-opolka, systemd, systemctl
+% alexis-opolka, systemd
 
 ############################## VARS ###############################
 $ list-of-unit:  systemctl list-units -o json | jq -r --arg pattern $1 '.[] | select(unit)' | jq ".[].unit" | awk "{print $1}"
@@ -7,6 +7,7 @@ $ list-of-target: systemctl list-units -t target -o json | jq -r --arg pattern $
 
 ### Units
 % alexis-opolka, systemd, systemctl, units
+@ alexis-opolka, systemd
 
 # List all units
 systemctl list-units
@@ -19,6 +20,7 @@ systemctl list-units --type=service
 
 ### Show properties
 % alexis-opolka, systemd, systemctl, show
+@ alexis-opolka, systemd
 
 # Show all status of systemd
 systemctl show
@@ -31,6 +33,7 @@ systemctl show <list-of-unit> -p IPIngressBytes -p IPIngressPackets -p IPEgressB
 
 ### Unit Files
 % alexis-opolka, systemd, systemctl, unit-files
+@ alexis-opolka, systemd
 
 # Show all unit-files
 systemctl list-unit-files
@@ -41,6 +44,7 @@ systemctl list-unit-files <list-of-unit>
 
 ### Dependencies of units
 % alexis-opolka, systemd, systemctl, units, dependencies
+@ alexis-opolka, systemd
 
 # Show dependencies of default target
 systemctl list-dependencies
@@ -50,12 +54,14 @@ systemctl list-dependencies <list-of-unit>
 
 ### Configuration of units
 % alexis-opolka, systemd, systemctl, units, configuration
+@ alexis-opolka, systemd
 
 # Configuration of unit files
 cat -n "/lib/systemd/system/<list-of-unit>"
 
 ### Target of units
 % alexis-opolka, systemd, systemctl, units, targets
+@ alexis-opolka, systemd
 
 # Get default target of system
 systemctl get-default
@@ -65,18 +71,21 @@ systemctl set-default <list-of-target>
 
 ### Edit units
 % alexis-opolka, systemd, systemctl, units, edition
+@ alexis-opolka, systemd
 
 # Edit unit
 systemctl edit <list-of-unit>
 
 ### Status units
 % alexis-opolka, systemd, systemctl, units, status
+@ alexis-opolka, systemd
 
 # Show status of unit
 systemctl status <list-of-unit>
 
 ### Poperty of units
 % alexis-opolka, systemd, systemctl, units, properties
+@ alexis-opolka, systemd
 
 # Set properties of unit
 systemctl set-property <list-of-unit> <properties>
