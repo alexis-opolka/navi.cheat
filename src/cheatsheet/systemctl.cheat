@@ -22,10 +22,10 @@ systemctl list-units --type=service
 % alexis-opolka, systemd, systemctl, show
 @ alexis-opolka, systemd
 
-# Show all status of systemd
+# Show all properties of systemd
 systemctl show
 
-# show specific status of unit
+# show specific properties of unit
 systemctl show <list-of-unit>
 
 # Show networking properties of service
