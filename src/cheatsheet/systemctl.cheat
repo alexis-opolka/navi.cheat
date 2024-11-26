@@ -12,6 +12,15 @@ systemctl list-units
 # List all active and unloaded units
 systemctl list-units --all
 
+# Show all service units
+systemctl list-units --type=service
+
+# Show all status of systemd
+systemctl show
+
+# show specific status of unit
+systemctl show <list-of-unit>
+
 ### Unit Files
 
 # Show all unit-files
@@ -27,3 +36,6 @@ systemctl list-dependencies
 
 # Shows dependencies of a certain unit
 systemctl list-dependencies <list-of-unit>
+
+### Configuration of unit files
+cat -n "/lib/systemd/system/<list-of-unit>"
