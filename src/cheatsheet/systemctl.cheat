@@ -4,7 +4,9 @@
 $ list-of-unit:  systemctl list-units --output json | \
   jq -r --arg pattern $1 '.[] | select(unit)' | jq ".[].unit" | awk "{print $1}"
 
+
 ### Units
+% units
 
 # List all units
 systemctl list-units
@@ -22,6 +24,7 @@ systemctl show
 systemctl show <list-of-unit>
 
 ### Unit Files
+% unit-files
 
 # Show all unit-files
 systemctl list-unit-files
@@ -29,7 +32,9 @@ systemctl list-unit-files
 # Show specific unit-files of a unit
 systemctl list-unit-files <list-of-unit>
 
-### Dependencies of unit files
+
+### Dependencies of units
+% unit, dependencies
 
 # Show dependencies of default target
 systemctl list-dependencies
@@ -37,5 +42,8 @@ systemctl list-dependencies
 # Shows dependencies of a certain unit
 systemctl list-dependencies <list-of-unit>
 
-### Configuration of unit files
+# Configuration of unit files
 cat -n "/lib/systemd/system/<list-of-unit>"
+
+# Get default target of system
+systemctl get-default
