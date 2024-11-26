@@ -13,4 +13,4 @@ systemctl list-dependencies
 
 # Shows dependencies of a certain unit
 systemctl list-dependencies <unit>
-$ unit: systemctl list-units | awk '{print $NF}'
+$ unit: systemctl list-units -o json | jq -r --arg pattern input_from_user '.[].unit | select(test($pattern))' | awk '{print $NF}'
