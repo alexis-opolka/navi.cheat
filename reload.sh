@@ -11,4 +11,4 @@ if [ -d $localcheat ]; then
 	rm -fr $localcheat;
 fi
 
-git clone "git@github.com:${user}/${repo}.git" 
+git clone "git@github.com:${user}/${repo}.git" $localcheat
