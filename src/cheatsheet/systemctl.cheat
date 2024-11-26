@@ -1,11 +1,9 @@
 % alexis-opolka, systemd, systemctl
 
 ############################## VARS ###############################
-$ list-of-unit:  systemctl list-units -o json | \
-  jq -r --arg pattern $1 '.[] | select(unit)' | jq ".[].unit" | awk "{print $1}"
+$ list-of-unit:  systemctl list-units -o json | jq -r --arg pattern $1 '.[] | select(unit)' | jq ".[].unit" | awk "{print $1}"
 
-$ list-of-target: systemctl list-units -t target -o json | \
-  jq -r --arg pattern $1 '.[] | select(unit)' | jq ".[].unit" | awk "{print $1}"
+$ list-of-target: systemctl list-units -t target -o json | jq -r --arg pattern $1 '.[] | select(unit)' | jq ".[].unit" | awk "{print $1}"
 
 ### Units
 % alexis-opolka, systemd, systemctl, units
