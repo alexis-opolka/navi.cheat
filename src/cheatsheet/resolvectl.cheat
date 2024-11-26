@@ -1,0 +1,2 @@
+# Calls Resolvectl
+resolvectl query -t <RECORD_TYPE> <DNS_ADDRESS>
