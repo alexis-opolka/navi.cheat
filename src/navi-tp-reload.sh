@@ -2,7 +2,7 @@
 
 user="iut-beziers"
 repo="navi-cheatsheet-alexis-opolka"
-localcheat="$(navi info cheats-path)/${user}__${repo}"
+localcheat="/home/centaurus/.local/share/navi/cheat/${user}__${repo}"
 
 echo "reloading the current cheat sheet..."
 
