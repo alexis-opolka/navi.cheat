@@ -58,3 +58,7 @@ On crée un service et un timer systemd:
     [Install]
     WantedBy=timers.target
     ```
+
+## Cheat Sheets
+
+Vous pouvez voir les cheat sheets ici: [src/cheatsheet](./src/cheatsheet/)
