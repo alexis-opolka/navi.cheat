@@ -1,5 +1,16 @@
 % alexis-opolka, systemd, systemctl
 
 # List all units
-systemctl list-units <active>
-$ active: for "--all","loaded"; do awk "{print $NF}"; done;
+systemctl list-units
+
+# List all active and unloaded units
+systemctl list-units --all
+
+### Dependencies of unit files
+
+# Show dependencies of default target
+systemctl list-dependencies
+
+# Shows dependencies of a certain unit
+systemctl list-dependencies <unit>
+$ unit: systemctl list-units | awk '{print $NF}'

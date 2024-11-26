@@ -26,6 +26,35 @@ dans notre `.bashrc`.
 ### Ajout d'un dépôt de cheatsheets
 
 ```sh
-navi repo add iut-beziers/navi-cheatsheet-alexis-opolka
+navi repo add git@github.com:iut-beziers/navi-cheatsheet-alexis-opolka
 ```
 
+#### Auto-reload de nos cheat-sheets
+
+On crée un service et un timer systemd:
+
+- `navi-tp.service`:
+
+    ```conf
+    [Unit]
+    Description=Simple pull to update Navi's cheatsheet
+    After=navi-tp.timer
+
+    [Service]
+    Type=oneshot
+    ExecStart=/usr/local/navi/navi-tp-reload.sh
+    ```
+
+- `navi-tp.timer`:
+
+    ```conf
+    [Unit]
+    Description=A timer for the navi-tp.service
+
+    [Timer]
+    OnUnitActiveSec=60s
+    OnBootSec=300s
+
+    [Install]
+    WantedBy=timers.target
+    ```
