@@ -1,12 +1,14 @@
 % alexis-opolka, systemd, systemctl
 
 ############################## VARS ###############################
-$ list-of-unit:  systemctl list-units --output json | \
+$ list-of-unit:  systemctl list-units -o json | \
   jq -r --arg pattern $1 '.[] | select(unit)' | jq ".[].unit" | awk "{print $1}"
 
+$ list-of-target: systemctl list-units -t target -o json | \
+  jq -r --arg pattern $1 '.[] | select(unit)' | jq ".[].unit" | awk "{print $1}"
 
 ### Units
-% units
+% alexis-opolka, systemd, systemctl, units
 
 # List all units
 systemctl list-units
@@ -24,7 +26,7 @@ systemctl show
 systemctl show <list-of-unit>
 
 ### Unit Files
-% unit-files
+% alexis-opolka, systemd, systemctl, unit-files
 
 # Show all unit-files
 systemctl list-unit-files
@@ -34,7 +36,7 @@ systemctl list-unit-files <list-of-unit>
 
 
 ### Dependencies of units
-% unit, dependencies
+% alexis-opolka, systemd, systemctl, units, dependencies
 
 # Show dependencies of default target
 systemctl list-dependencies
@@ -42,8 +44,17 @@ systemctl list-dependencies
 # Shows dependencies of a certain unit
 systemctl list-dependencies <list-of-unit>
 
+### Configuration of units
+% alexis-opolka, systemd, systemctl, units, configuration
+
 # Configuration of unit files
 cat -n "/lib/systemd/system/<list-of-unit>"
 
+### Target of units
+% alexis-opolka, systemd, systemctl, units, targets
+
 # Get default target of system
 systemctl get-default
+
+# Set default target
+systemctl set-default <list-of-target>
