@@ -1,0 +1,5 @@
+% alexis-opolka, systemd, systemctl
+
+# List all units
+systemctl list-units <active>
+$ active: for "--all","loaded"; do awk "{print $NF}"; done;
