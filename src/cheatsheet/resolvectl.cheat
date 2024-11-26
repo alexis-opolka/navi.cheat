@@ -1,2 +1,2 @@
 # Calls Resolvectl for a DNS Resolution
-resolvectl query -t <RECORD_TYPE> <FQDN> 'resolvectl query -t <record> <FQDN>'
+resolvectl query -t <RECORD_TYPE> <FQDN> 'resolvectl query -t <RECORD_TYPE> <FQDN>'
