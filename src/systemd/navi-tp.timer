@@ -1,9 +1,0 @@
-[Unit]
-Description=A timer for the navi-tp.service
-
-[Timer]
-OnUnitActiveSec=60s
-OnBootSec=300s
-
-[Install]
-WantedBy=timers.target

@@ -1,7 +1,0 @@
-[Unit]
-Description=Simple pull to update Navi's cheatsheet
-After=navi-tp.timer
-
-[Service]
-Type=oneshot
-ExecStart=/usr/local/navi/navi-tp-reload.sh

@@ -1,0 +1,5 @@
+% linux, systemd, journalctl
+@ linux, systemd
+
+# Show data specific of a unit
+journalctl -u <list-of-unit> -n 1 -o verbose

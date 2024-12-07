@@ -1,4 +1,4 @@
-% alexis-opolka, systemd, systemd-run
+% linux, systemd, systemd-run
 
 # Systemd-run with Dynamic user process
 systemd-run -p DynamicUser=1 -t <executable>

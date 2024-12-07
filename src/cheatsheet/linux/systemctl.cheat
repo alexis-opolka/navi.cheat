@@ -1,4 +1,4 @@
-% alexis-opolka, systemd
+% linux, systemd
 
 ############################## VARS ###############################
 $ list-of-unit:  systemctl list-units -o json | jq -r --arg pattern $1 '.[] | select(unit)' | jq ".[].unit" | awk "{print $1}"
@@ -6,8 +6,8 @@ $ list-of-unit:  systemctl list-units -o json | jq -r --arg pattern $1 '.[] | se
 $ list-of-target: systemctl list-units -t target -o json | jq -r --arg pattern $1 '.[] | select(unit)' | jq ".[].unit" | awk "{print $1}"
 
 ### Units
-% alexis-opolka, systemd, systemctl, units
-@ alexis-opolka, systemd
+% linux, systemd, systemctl, units
+@ linux, systemd
 
 # List all units
 systemctl list-units
@@ -19,8 +19,8 @@ systemctl list-units --all
 systemctl list-units --type=service
 
 ### Show properties
-% alexis-opolka, systemd, systemctl, show
-@ alexis-opolka, systemd
+% linux, systemd, systemctl, show
+@ linux, systemd
 
 # Show all properties of systemd
 systemctl show
@@ -32,8 +32,8 @@ systemctl show <list-of-unit>
 systemctl show <list-of-unit> -p IPIngressBytes -p IPIngressPackets -p IPEgressBytes -p IPEgressPackets
 
 ### Unit Files
-% alexis-opolka, systemd, systemctl, unit-files
-@ alexis-opolka, systemd
+% linux, systemd, systemctl, unit-files
+@ linux, systemd
 
 # Show all unit-files
 systemctl list-unit-files
@@ -43,8 +43,8 @@ systemctl list-unit-files <list-of-unit>
 
 
 ### Dependencies of units
-% alexis-opolka, systemd, systemctl, units, dependencies
-@ alexis-opolka, systemd
+% linux, systemd, systemctl, units, dependencies
+@ linux, systemd
 
 # Show dependencies of default target
 systemctl list-dependencies
@@ -53,15 +53,15 @@ systemctl list-dependencies
 systemctl list-dependencies <list-of-unit>
 
 ### Configuration of units
-% alexis-opolka, systemd, systemctl, units, configuration
-@ alexis-opolka, systemd
+% linux, systemd, systemctl, units, configuration
+@ linux, systemd
 
 # Configuration of unit files
 cat -n "/lib/systemd/system/<list-of-unit>"
 
 ### Target of units
-% alexis-opolka, systemd, systemctl, units, targets
-@ alexis-opolka, systemd
+% linux, systemd, systemctl, units, targets
+@ linux, systemd
 
 # Get default target of system
 systemctl get-default
@@ -70,22 +70,22 @@ systemctl get-default
 systemctl set-default <list-of-target>
 
 ### Edit units
-% alexis-opolka, systemd, systemctl, units, edition
-@ alexis-opolka, systemd
+% linux, systemd, systemctl, units, edition
+@ linux, systemd
 
 # Edit unit
 systemctl edit <list-of-unit>
 
 ### Status units
-% alexis-opolka, systemd, systemctl, units, status
-@ alexis-opolka, systemd
+% linux, systemd, systemctl, units, status
+@ linux, systemd
 
 # Show status of unit
 systemctl status <list-of-unit>
 
 ### Poperty of units
-% alexis-opolka, systemd, systemctl, units, properties
-@ alexis-opolka, systemd
+% linux, systemd, systemctl, units, properties
+@ linux, systemd
 
 # Set properties of unit
 systemctl set-property <list-of-unit> <properties>
