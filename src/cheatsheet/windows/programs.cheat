@@ -1,8 +1,8 @@
 % windows, explorer
+$ files: ls ./
 
 # Windows file explorer
-explorer <PATH>
+explorer <files>
 
 # Windows file explorer with pre-loaded files
-explorer <path>
-$ path: ls ./
+explorer <files>
