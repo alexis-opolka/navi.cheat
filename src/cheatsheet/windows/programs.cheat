@@ -1,5 +1,5 @@
 % windows, explorer
-$ files: ls ./
+$ files: ls | Format-Wide -Column 5 -Property Name
 
 # Windows file explorer
 explorer <files>
