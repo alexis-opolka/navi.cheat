@@ -2,3 +2,7 @@
 
 # Windows file explorer
 explorer <PATH>
+
+# Windows file explorer with pre-loaded files
+explorer <path>
+$ path: ls ./
