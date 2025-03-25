@@ -1,5 +1,5 @@
 % windows, explorer
-$ files: ls | Format-List -Property Name | jq --raw-input 'select(. != "") | gsub("Name : "; "")'
+$ files: ls | Format-List -Property Name | jq --raw-input "select(. != \"\") | gsub(\"Name : \"; \"\")"
 
 # Windows file explorer
 explorer <files>
