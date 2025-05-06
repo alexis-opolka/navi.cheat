@@ -6,3 +6,6 @@ explorer <files>
 
 # Windows file explorer with pre-loaded files
 explorer <files>
+
+# A simple echo but as a PowerShell command
+Write-Output <hello_world>
