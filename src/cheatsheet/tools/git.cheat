@@ -1,0 +1,5 @@
+% tools, partial, git
+@ tools, partial, git
+
+# Add a signed-off commit with a co-author
+git commit -sm "<TITLE>" -m "Co-authored-by: <CO-AUTHOR>"
